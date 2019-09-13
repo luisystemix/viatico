@@ -1,0 +1,15 @@
+ /*CSS PARA LA VALIDACIÓN*/
+    input.error, input select.error
+        {
+            border: 1px solid red;
+        }
+    label.error
+        {
+            font-size:11px;
+            /* background-color:#cc0000; */
+            color:#CC0000;
+            padding:3px;
+            margin-left:5px;
+            -moz-border-radius: 4px;
+            -webkit-border-radius: 4px;
+        }

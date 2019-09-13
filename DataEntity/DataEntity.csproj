@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1C997E16-6C97-43FF-A9CD-E3180FC7EA63}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataEntity</RootNamespace>
+    <AssemblyName>DataEntity</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <IntermediateOutputPath>C:\Users\josea\AppData\Local\Temp\vs9123.tmp\Debug\</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <IntermediateOutputPath>C:\Users\josea\AppData\Local\Temp\vs9123.tmp\Release\</IntermediateOutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DE_Extensiones\EXT_AdversidadPresentada.cs" />
+    <Compile Include="DE_Extensiones\EXT_Costos.cs" />
+    <Compile Include="DE_Extensiones\EXT_CostosDetalle.cs" />
+    <Compile Include="DE_Extensiones\EXT_Cronograma.cs" />
+    <Compile Include="DE_Extensiones\EXT_CronogramaDias.cs" />
+    <Compile Include="DE_Extensiones\EXT_CronogramaDiasAvance.cs" />
+    <Compile Include="DE_Extensiones\EXT_CronogramaTec.cs" />
+    <Compile Include="DE_Extensiones\EXT_CronogramaTecDetalle.cs" />
+    <Compile Include="DE_Extensiones\EXT_DesignacionOrg.cs" />
+    <Compile Include="DE_Extensiones\EXT_DesignacionProd.cs" />
+    <Compile Include="DE_Extensiones\EXT_FaceFenologiaArroz.cs" />
+    <Compile Include="DE_Extensiones\EXT_FaceFenologiaMaiz.cs" />
+    <Compile Include="DE_Extensiones\EXT_FaceFenologiaTrigo.cs" />
+    <Compile Include="DE_Extensiones\EXT_FaceFenologicaCultivo.cs" />
+    <Compile Include="DE_Extensiones\EXT_FaseFenEnvioSem.cs" />
+    <Compile Include="DE_Extensiones\EXT_FaseFenEnvioSemanaTrigo.cs" />
+    <Compile Include="DE_Extensiones\EXT_FechaSegCost.cs" />
+    <Compile Include="DE_Extensiones\EXT_Fenologia.cs" />
+    <Compile Include="DE_Extensiones\EXT_MuestraSeguimiento.cs" />
+    <Compile Include="DE_Extensiones\EXT_Rendimiento.cs" />
+    <Compile Include="DE_Extensiones\EXT_RendimientoDetalle.cs" />
+    <Compile Include="DE_Extensiones\EXT_Seguimiento.cs" />
+    <Compile Include="DE_Extensiones\EXT_SeguimientoCoordenadas.cs" />
+    <Compile Include="DE_Extensiones\EXT_SeguimientoCosecha.cs" />
+    <Compile Include="DE_Extensiones\EXT_SeguimientoParcela.cs" />
+    <Compile Include="DE_Extensiones\EXT_SeguimientoCultivo.cs" />
+    <Compile Include="DE_Extensiones\EXT_SeguimientoPendiente.cs" />
+    <Compile Include="DE_Extensiones\EXT_SeguimientoSiembra.cs" />
+    <Compile Include="DE_Extensiones\EXT_SeguimientoDistribDetalle.cs" />
+    <Compile Include="DE_Extensiones\EXT_SeguimientoDistribucion.cs" />
+    <Compile Include="DE_Extensiones\EXT_Seguimiento_Cultivo_Segun_Fase_Fenologica.cs" />
+    <Compile Include="DE_General\Modulo.cs" />
+    <Compile Include="DE_General\Permiso.cs" />
+    <Compile Include="DE_General\Persona.cs" />
+    <Compile Include="DE_General\Regional.cs" />
+    <Compile Include="DE_General\Roles.cs" />
+    <Compile Include="DE_General\Usuario.cs" />
+    <Compile Include="DE_Insumos\INS_Distribucion.cs" />
+    <Compile Include="DE_Insumos\INS_DistribucionDetalle.cs" />
+    <Compile Include="DE_Registro\AP_Actividades.cs" />
+    <Compile Include="DE_Registro\AP_Campanhia.cs" />
+    <Compile Include="DE_Registro\AP_Comunidad.cs" />
+    <Compile Include="DE_Registro\AP_Comunidad_Org.cs" />
+    <Compile Include="DE_Registro\AP_ContratoOrg.cs" />
+    <Compile Include="DE_Registro\AP_Coordenadas.cs" />
+    <Compile Include="DE_Registro\AP_CronogramaCamp.cs" />
+    <Compile Include="DE_Registro\AP_CronogramaCampDetalle.cs" />
+    <Compile Include="DE_Registro\AP_DocPresentado.cs" />
+    <Compile Include="DE_Registro\AP_DocPresentadoProv.cs" />
+    <Compile Include="DE_Registro\AP_DocSolicitado.cs" />
+    <Compile Include="DE_Registro\AP_DocVerificado.cs" />
+    <Compile Include="DE_Registro\AP_DocVerificadoProv.cs" />
+    <Compile Include="DE_Registro\AP_InscripcionOrg.cs" />
+    <Compile Include="DE_Registro\AP_InscripcionProd.cs" />
+    <Compile Include="DE_Registro\AP_InscripcionProv.cs" />
+    <Compile Include="DE_Registro\AP_Municipio.cs" />
+    <Compile Include="DE_Registro\AP_Organizacion.cs" />
+    <Compile Include="DE_Registro\AP_ParametrosCamp.cs" />
+    <Compile Include="DE_Registro\AP_PlanoUbicacion.cs" />
+    <Compile Include="DE_Registro\AP_Proveedor.cs" />
+    <Compile Include="DE_Registro\AP_Provincia.cs" />
+    <Compile Include="DE_Registro\AP_Productor.cs" />
+    <Compile Include="DE_Registro\AP_RepresentLegal.cs" />
+    <Compile Include="DE_Registro\AP_RepresentLegalProv.cs" />
+    <Compile Include="DE_Registro\AP_Reunion.cs" />
+    <Compile Include="DE_Registro\AP_ReunionAsistencia.cs" />
+    <Compile Include="DE_Registro\AP_ReunionTareas.cs" />
+    <Compile Include="DE_Registro\INS_ContratoInsumo.cs" />
+    <Compile Include="DE_Registro\INS_DetalleInsumo.cs" />
+    <Compile Include="DE_Registro\INS_TipoInsumo.cs" />
+    <Compile Include="DE_Viaticos\VT_Categoria.cs" />
+    <Compile Include="DE_Viaticos\VT_CategoriaMonto.cs" />
+    <Compile Include="DE_Viaticos\VT_Cuenta.cs" />
+    <Compile Include="DE_Viaticos\VT_Departamento.cs" />
+    <Compile Include="DE_Viaticos\VT_EstructuraOrg.cs" />
+    <Compile Include="DE_Viaticos\VT_Feriados.cs" />
+    <Compile Include="DE_Viaticos\VT_Informe.cs" />
+    <Compile Include="DE_Viaticos\VT_InformeActividad.cs" />
+    <Compile Include="DE_Viaticos\VT_Observacion.cs" />
+    <Compile Include="DE_Viaticos\VT_Planilla.cs" />
+    <Compile Include="DE_Viaticos\VT_PlanillaDia.cs" />
+    <Compile Include="DE_Viaticos\VT_Solicitud.cs" />
+    <Compile Include="DE_Viaticos\VT_SolicitudDestino.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\DataEntity.dll" />
+    <Content Include="bin\Debug\DataEntity.pdb" />
+    <Content Include="bin\Release\DataEntity.dll" />
+    <Content Include="bin\Release\DataEntity.pdb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

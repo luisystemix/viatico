@@ -1,0 +1,85 @@
+body{
+		font-family:Arial, Helvetica, sans-serif;
+		font-size:12px;		
+		margin:0px;
+		padding:0px;	
+	}
+.Table
+	{
+		width: 800px;
+		margin: 0 auto;
+		text-align: left;	
+	}
+.Titulo
+{
+		text-align:center; 
+		font-weight: bold;
+      font-size: 11px;	
+}
+.TituloGrande
+{
+ 		text-align: center;
+ 		font-weight: bold;
+ 		font-size:18px; 
+}
+.TituloMediano
+{
+ 		text-align: center;
+ 		font-weight: bold;
+ 		font-size:14px; 
+}
+.Datos
+{
+	text-align: left;
+	font-size:11px;
+	font-weight: bold;
+}
+
+.DatosDerecha
+{
+	text-align:right;
+	font-size:11px;
+	font-weight: bold;
+}
+.TextoIzqSeparador
+{
+	text-align: left;
+	font-weight: bold;
+ 	font-size:14px; 
+}
+.TextoDerSeparador
+{
+	text-align: right;
+	font-weight: bold;
+ 	font-size:14px; 
+}
+.TextoIzquierda
+{
+	text-align: left;
+}
+.TextoDerecha
+{
+	text-align: right;
+}
+
+.BordeTabla
+{
+   width: 800px;
+   border-collapse: collapse;
+   border: 1px solid #000000;
+  	margin: 0 auto;
+	text-align: left;
+}
+.Center
+{
+	text-align: center;
+}
+
+.borde
+{
+	border-bottom:1px solid #000000;
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 1px solid #000000;
+}
+

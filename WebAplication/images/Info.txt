@@ -1,0 +1,9 @@
+Cold Fusion HD icons - By Chris Banks
+A fusion of influence and inspiration from many icon packs.
+
+
+The folder called 'old' contain some of the original, older icons. Although they have all been replaced, some people may prefer them.
+Most game icons, and some app icons use their own original app icon, so full credit goes to them.
+
+More info, a .psd, an .mtz and  making of videos can be found on XDA: 
+http://forum.xda-developers.com/showthread.php?t=1430033

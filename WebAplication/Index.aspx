@@ -1,0 +1,22 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="WebAplication.Index" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="text-align:center">    
+        &nbsp;SISTEMA 
+        SPIA-AP (PRODUCCIÓN) SE ENCUENTRA EN MANTENIENTO<br />
+        POR FAVOR ESPERAR APROXIMADAMENTE 30 MINUTOS.
+        <br />HORA DEL CORTE 19:30&nbsp; DEL 07 DE MAYO DE 2013<br />
+        Atte: Sistemas<br />
+        Cel: <br />
+    <img src="images/mantenimiento.jpg" alt="Mantenimiento temporal" />
+    </div>
+    </form>
+</body>
+</html>

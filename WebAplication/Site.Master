@@ -1,0 +1,105 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WebAplication.SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Sistema [- .:: SPIA ::. -] </title> 
+    <link href="Styles/Site.css" rel="stylesheet" type="text/css" />  
+    <link href="css/EmapaStyele.css" rel="stylesheet" type="text/css" />  
+    <link href="images/logo.ico" type="image/x-icon" rel="shortcut icon"/> 
+    <link href="css/error.css" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="formAcopio" runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    Sistema - .:: SPIA 
+                    - 
+                    <asp:Label ID="LblTipoSis" runat="server"></asp:Label>
+&nbsp;1.0::.
+                </h1>
+            </div>
+            <%-- <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="~/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Iniciar sesión</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Pantalla de bienvenida <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" LogoutText="Cerrar sesión" LogoutPageUrl="~/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+            </div>--%>
+            <div class="clear hideSkiplink">
+                Usuario: [
+                <asp:Label ID="LblUser" runat="server" CssClass="colorCerrar"></asp:Label>
+&nbsp;] - [ <asp:Label ID="LblCargo" runat="server" CssClass="colorCerrar"></asp:Label>
+                  &nbsp;]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                Regional: [
+                <asp:Label ID="LblRegional" runat="server" CssClass="colorCerrar"></asp:Label>
+            &nbsp;]<asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+            </div>
+            <%--<asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Página principal"/>
+                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="Acerca de"/>
+                    </Items>
+                </asp:Menu>--%>
+            </div>
+   
+        <div class="sessionClose">
+            <table>
+                <tr>
+                    <td>
+                        [<asp:LinkButton ID="lbCerrar" runat="server" onclick="lbCerrar_Click" ForeColor="White">Cerrar</asp:LinkButton>&nbsp;]
+                    </td>
+                    <td>
+                        [<asp:LinkButton ID="lbPerfil" runat="server" ForeColor="White" OnClick="lbPerfil_Click">Perfil</asp:LinkButton>&nbsp;]
+                    </td>
+                </tr>
+            </table>
+        
+            
+        </div>
+        <div class="main">
+          <table style="width: 100%;">
+            <tr> <td style="width:13%;text-indent:5px;	color:#444; border: 1px solid #bbb; vertical-align:top;">
+                    
+                    <br/>
+                    <asp:TreeView ID="TreeVMenu" runat="server" ImageSet="XPFileExplorer" 
+                        NodeIndent="15" OnSelectedNodeChanged="TreeVMenu_SelectedNodeChanged">
+                        <HoverNodeStyle Font-Underline="True" ForeColor="#6666AA" />
+                        <NodeStyle Font-Names="Tahoma" Font-Size="8pt" ForeColor="Black" 
+                            HorizontalPadding="2px" NodeSpacing="0px" VerticalPadding="2px" />
+                        <ParentNodeStyle Font-Bold="False" />
+                        <SelectedNodeStyle BackColor="#B5B5B5" Font-Underline="False" 
+                            HorizontalPadding="0px" VerticalPadding="0px" />
+                    </asp:TreeView>
+                    </td>
+                 <td style="vertical-align:top;">
+                     <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                     <p>
+                         <br />
+                     </p>
+                     </asp:ContentPlaceHolder>
+                </td> 
+            </tr>	            						            
+          </table>   
+        </div>
+        <div class="clear">
+        <br />
+        </div>
+    </div>
+    <div class="footer">
+        Desarrollado por <a href="http://www.emapa.gob.bo" target="_blank">Emapa-fqj</a> 
+        , todos los derechos estan reservados. 2013
+    </div>
+    </form>
+</body>
+</html>

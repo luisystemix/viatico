@@ -1,0 +1,453 @@
+﻿/* DEFAULTS
+----------------------------------------------------------*/
+
+body
+{
+    background: #7cb0d4;
+    font-size: .80em;
+    font-family: "Helvetica Neue" , "Lucida Grande" , "Segoe UI" , Arial, Helvetica, Verdana, sans-serif;
+    margin: 0px;
+    padding: 0px;
+    color: #CCC;
+    background-image: url('Images/bodybg.png');
+    background-repeat:repeat-x;
+}
+
+a:link, a:visited
+{
+    color:  #034af3;
+}
+
+a:hover
+{
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active
+{
+    color: #034af3;
+}
+
+p
+{
+    margin-bottom:
+
+/* Image */
+img
+{
+    border:1px solid #ccc;
+    padding:3px;
+    text-align: center;
+}
+
+
+
+;
+    padding:3px;
+    }
+
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #666666;
+    font-variant: small-caps;
+    text-transform: none;
+    font-weight: 200;
+    margin-bottom: 0px;
+}
+
+h1
+{
+    font-size: 1.6em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+h2
+{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+/* this rule styles <h1> and <h2> tags that are the 
+first child of the left and right table columns */
+.rightColumn > h1, .rightColumn > h2, .leftColumn > h1, .leftColumn > h2
+{
+    margin-top: 0px;
+}
+
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+.page
+{
+    width: 98%; /*960px*/
+    margin: 10px auto 0px auto;
+    border: 0px solid #808080;
+    border-radius:12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -o-border-radius:12px;
+    box-shadow: 0px -0px 25px #333;
+    -moz-box-shadow: 0px -0px 25px #333;
+    -webkit-box-shadow: 0px -0px 25px #333;
+    -o-box-shadow: 0px -0px 25px #333;
+    color: #000;
+    background-color: #062233;
+}
+
+.banner
+{
+    border: 1px solid #C0C0C0;
+    padding: 5px;
+    border-radius:12px;
+    -moz-border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -o-border-radius:12px;
+    text-align:center;
+}
+
+.header
+{
+    border-bottom: 0px solid #FFFFFF;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    background-color: #062233;
+    border-top-left-radius:12px;
+    -moz-border-radius-topleft: 12px;
+    -o-border-radius-top-left:12px;
+    border-top-right-radius:12px;
+    -moz-border-radius-topright: 12px;
+    -o-border-radius-top-right:12px;
+    -webkit-border-radius: 10px;
+    box-shadow:0px 2px 2px #333;
+    -moz-box-shadow: 0px 2px 2px #333;
+    -webkit-box-shadow: 15px 15px 9 #333;
+    -o-box-shadow:0px 2px 2px #333;;
+    width: 100%;
+    color: #FFFFFF;
+    top: 0px;
+    left: 0px;
+}
+
+.hdrimg
+{
+    width: 942px;
+    margin-left: 8px;
+    height: 190px;
+    background-color: White;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    border-bottom: 1px solid white;
+    background-image: url('Images/Banner/rbizz.png');
+}
+
+.header h1
+{
+    font-weight: 700;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    color: #FFFFFF;
+    border: none;
+    line-height: 2em;
+    font-size: 2em;
+    text-shadow: 1px 1px 2px #333;
+}
+
+.main
+{
+    border: 1px solid #C0C0C0;
+    padding: 0px 12px;
+    background-color: #fff;
+    border-radius:10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -o-border-radius:10px;
+    margin: 12px 8px 8px 8px;
+    min-height: 420px;
+    background-image: url('Images/mainBG.png');
+    background-repeat: repeat-x;
+}
+
+.leftCol
+{
+    padding: 6px 0px;
+    margin: 12px 8px 8px 8px;
+    width: 200px;
+    min-height: 200px;
+}
+
+.footer
+{
+    color: #CCC;
+    padding: 8px 0px 0px 0px;
+    margin: 0px auto;
+    text-align: center;
+    line-height: normal;
+}
+
+
+/* TAB MENU   
+----------------------------------------------------------*/
+
+div.hideSkiplink
+{
+    width: 100%;
+    background-color: #0C466B;
+    height: auto;
+    border-top:1px solid white;
+    border-bottom:1px solid white;     
+}
+
+div.menu
+{
+    padding: 4px 0px 4px 8px;
+    margin-bottom: -4px;
+}
+
+div.menu ul
+{
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    width: auto;
+    background-color:#0C466B;
+}
+
+div.menu ul li a, div.menu ul li a:visited
+{
+    background-color: #0C466B;
+    color: #DBDBF2;
+    display: block;
+    padding: 4px 30px;
+    text-decoration: none;
+    white-space: nowrap;
+    border-top-color: #942323;
+    border-bottom-color: #942323;
+}
+
+div.menu ul li a:hover
+{
+    background-color: #1B5B87;
+    border:1px solid white;
+    
+    /*border-top-left-radius:4px;
+    -webkit-border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    -o-border-radius-top-left:4px:;
+    -moz-border-radius-topright: 4px;
+    -webkit-border-top-right-radius: 4px;
+    border-top-right-radius:4px;*/
+    
+    color: #FFFFFF;
+    text-decoration: none;
+}
+
+div.menu ul li a:active
+{
+    background-color: transparent;
+    color: #D6D6D6;
+    text-decoration: none;
+}
+
+/* FORM ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    margin: 1em 0px;
+    padding: 1em;
+    border: 1px solid #ccc;
+}
+
+fieldset p 
+{
+    margin: 2px 12px 10px 10px;
+}
+
+fieldset.login label, fieldset.register label, fieldset.changePassword label
+{
+    display: block;
+}
+
+fieldset label.inline 
+{
+    display: inline;
+}
+
+legend 
+{
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 2px 4px 8px 4px;
+}
+
+input.textEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+input.passwordEntry 
+{
+    width: 320px;
+    border: 1px solid #ccc;
+}
+
+div.accountInfo
+{
+    width: 42%;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+
+.clear
+{
+    clear: both;
+}
+
+.title
+{
+    display: block;
+    float: left;
+    text-align: left;
+    width: auto;
+}
+
+.loginDisplay
+{
+    border-left: 1px solid #7A8792;
+    border-bottom: 1px solid #7A8792;
+    border-right: 1px solid #7A8792;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-top-right-radius:12px;
+
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topright:10px;
+
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 5px;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: #566068;
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 10px;
+    color: White;
+}
+.sessionClose
+{
+    border-left: 1px solid #EAEAEA;  /*#7A8792*/
+    border-bottom:  1px  solid #EAEAEA;
+    border-right: 1px solid #EAEAEA;
+    border-top: 1px solid #EAEAEA;
+    border-bottom-right-radius:5px;
+    border-bottom-left-radius:5px;
+    border-top-right-radius:12px;
+
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-topright:10px;
+
+    -webkit-border-bottom-left-radius: 5px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-bottom-right-radius: 5px;
+
+    position: absolute;
+    top: 53px;
+    right: 22px;
+    background-color: #566068;
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    padding: 7px;
+    color: White;
+}
+
+.loginDisplay a:link
+{
+    color: #D7D7FF;
+}
+
+.loginDisplay a:visited
+{
+    color: #D7D7FF;
+}
+
+.loginDisplay a:visited
+{
+    color: #D7D7FF;
+}
+
+.loginDisplay a:hover
+{
+    color: #BFBFFF;
+}
+
+.footer a:link
+{
+    color: #D7D7FF;
+}
+
+.footer a:visited
+{
+    color: #D7D7FF;
+}
+
+.footer a:visited
+{
+    color: #D7D7FF;
+}
+
+.footer a:hover
+{
+    color: #BFBFFF;
+}
+
+.failureNotification
+{
+    font-size: 1.2em;
+    color: Red;
+}
+
+.bold
+{
+    font-weight: bold;
+}
+
+.submitButton
+{
+    text-align: right;
+    padding-right: 10px;
+}
+

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4918C2A7-A76D-4ED2-A20D-D53FB6C03A1C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DataAccess</RootNamespace>
+    <AssemblyName>DataAccess</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common">
+      <HintPath>..\DLL\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Security.Cryptography">
+      <HintPath>..\DLL\Microsoft.Practices.EnterpriseLibrary.Security.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2">
+      <HintPath>..\DLL\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DA_Control\DA_RegionesApoyadas.cs" />
+    <Compile Include="DA_Extensiones\DA_EXT_Actividades.cs" />
+    <Compile Include="DA_Extensiones\DA_EXT_Costos.cs" />
+    <Compile Include="DA_Extensiones\DA_EXT_Cronogramas.cs" />
+    <Compile Include="DA_Extensiones\DA_EXT_DesignacionOrg.cs" />
+    <Compile Include="DA_Extensiones\DA_EXT_DesignacionProd.cs" />
+    <Compile Include="DA_Extensiones\DA_EXT_Fenologia.cs" />
+    <Compile Include="DA_Extensiones\DA_EXT_Rendimiento.cs" />
+    <Compile Include="DA_Extensiones\DA_EXT_Reportes.cs" />
+    <Compile Include="DA_Extensiones\DA_EXT_SegSemanalTotales.cs" />
+    <Compile Include="DA_Extensiones\DA_EXT_Seguimiento.cs" />
+    <Compile Include="DA_General\DA_Codificacion.cs" />
+    <Compile Include="DA_General\DA_Persona.cs" />
+    <Compile Include="DA_General\DA_AdminUser.cs" />
+    <Compile Include="DA_General\DA_Regional.cs" />
+    <Compile Include="DA_General\DA_Usuario.cs" />
+    <Compile Include="DA_Insumos\DA_INS_Distribucion.cs" />
+    <Compile Include="DA_Registro\DA_AP_Campanhia.cs" />
+    <Compile Include="DA_Registro\DA_AP_Comunidad.cs" />
+    <Compile Include="DA_Registro\DA_AP_ContratoOrg.cs" />
+    <Compile Include="DA_Registro\DA_AP_Coordenadas.cs" />
+    <Compile Include="DA_Registro\DA_AP_CronogramaCamp.cs" />
+    <Compile Include="DA_Registro\DA_AP_Departamento.cs" />
+    <Compile Include="DA_Registro\DA_AP_DocPresentado.cs" />
+    <Compile Include="DA_Registro\DA_AP_DocPresentadoProv.cs" />
+    <Compile Include="DA_Registro\DA_AP_DocVerificado.cs" />
+    <Compile Include="DA_Registro\DA_AP_DocVerificadoProv.cs" />
+    <Compile Include="DA_Registro\DA_AP_InscripcionOrg.cs" />
+    <Compile Include="DA_Registro\DA_AP_InscripcionProv.cs" />
+    <Compile Include="DA_Registro\DA_AP_Inscripcion_Prod.cs" />
+    <Compile Include="DA_Registro\DA_AP_Inscripcion_Prod_Update.cs" />
+    <Compile Include="DA_Registro\DA_AP_Municipio.cs" />
+    <Compile Include="DA_Registro\DA_AP_Organizacion.cs" />
+    <Compile Include="DA_Registro\DA_AP_Parametros_Camp.cs" />
+    <Compile Include="DA_Registro\DA_AP_Plano_Ubicacion.cs" />
+    <Compile Include="DA_Registro\DA_AP_Productor.cs" />
+    <Compile Include="DA_Registro\DA_AP_Proveedor.cs" />
+    <Compile Include="DA_Registro\DA_AP_Provincia.cs" />
+    <Compile Include="DA_Registro\DA_AP_Registro_Org.cs" />
+    <Compile Include="DA_Registro\DA_AP_Registro_Prod.cs" />
+    <Compile Include="DA_Registro\DA_AP_RepresentLegalProv.cs" />
+    <Compile Include="DA_Registro\DA_AP_Responsable.cs" />
+    <Compile Include="DA_Registro\DA_AP_Reunion.cs" />
+    <Compile Include="DA_Registro\DA_INS_Insumos.cs" />
+    <Compile Include="DA_Viaticos\DA_VT_Categoria.cs" />
+    <Compile Include="DA_Viaticos\DA_VT_Feriado.cs" />
+    <Compile Include="DA_Viaticos\DA_VT_Informe.cs" />
+    <Compile Include="DA_Viaticos\DA_VT_Planilla.cs" />
+    <Compile Include="DA_Viaticos\DA_VT_Solicitud.cs" />
+    <Compile Include="DA_Viaticos\DA_VT_Viaticos.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataEntity\DataEntity.csproj">
+      <Project>{1C997E16-6C97-43FF-A9CD-E3180FC7EA63}</Project>
+      <Name>DataEntity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\DataAccess.dll" />
+    <Content Include="bin\Debug\DataAccess.pdb" />
+    <Content Include="bin\Release\DataAccess.dll" />
+    <Content Include="bin\Release\DataAccess.pdb" />
+    <Content Include="bin\Release\DataEntity.dll" />
+    <Content Include="bin\Release\DataEntity.pdb" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,176 @@
+/*
+input{
+width:375px;
+display:block;
+border: 1px solid #999;
+height: 25px;
+-webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+-moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+}
+textarea#feedback {
+width:375px;
+height:150px;
+}
+textarea.message {
+display:block;
+}
+input.button {
+width:50px;
+position:absolute;
+right:20px;
+bottom:20px;
+background:#09C;
+color:#fff;
+font-family: Tahoma, Geneva, sans-serif;
+height:30px;
+-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+border: 1p solid #999;
+}
+input.button:hover {
+background:#fff;
+color:#09C;
+}
+*/
+ .TableBorder
+ {
+    border: 1px solid #BBB;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: 9pt;
+    margin-left: 0px;
+}
+  .TableBorder2
+ {
+    border: 1px solid #BBB;
+    width: 100%;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    font-size: xx-small;
+}
+ .SubTitulo
+ {
+   font-size: 17px;
+   font-weight: bold;
+   color: #666;
+    text-align: left;
+}
+ .SubTitulo2
+ {
+   font-size: 15px;
+   font-weight: bold;
+   color: #666;
+    text-align: left;
+}
+ .textoIzquierda
+ {
+    text-align: left;
+ }
+ .textoDerecha
+ {
+   text-align: right;
+ }
+ .textoCentro
+ {
+}
+ .espacio
+ {
+     width: 10px;
+ }
+ .textoFondoIzq
+ {
+    text-align: left;
+    background: #E5E5E5;
+    border: 1px solid #999;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+ }
+  .textoFondoDer
+ {
+    text-align: right;
+    background: #E5E5E5;
+    border: 1px solid #999;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+ }
+  .textoFondoCen
+ {
+    text-align: center;
+    background: #E5E5E5;
+    border: 1px solid #999;
+    -webkit-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.3);
+ }
+ .resaltaValor
+ {
+     font-size: 17px;
+     font-weight: bold;
+     color: #666;
+     background: #FBDBAA;
+     text-align: center;
+ }
+ .Input
+{
+    border: 1px solid #83A8CC;
+    height: 17px;
+    padding-right: 2px;
+    text-align: right;
+}
+ .AnchoColumnas
+{
+    width:250px;
+  /*  text-align:center;*/
+}
+
+/*Centramos la tabla que contiene los enlaces para las paginas*/
+
+.gridViewPaginacion table {
+    margin: 2px auto;
+}
+
+/*El span representa el enlace a la pagina en la que estamos actualmente*/
+
+.gridViewPaginacion span {
+    display: block;
+    margin: 0;
+    padding: 5px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50% 50%;
+    background: #B1C689;
+    color: #3743a1;
+}
+
+/*Estilo para los enlaces redondos*/
+/*
+
+
+.gridViewPaginacion a {
+    display: block;
+    text-decoration: none;
+    margin: 0;
+    padding: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50% 50%;
+    background: #367DEE;
+    color: #fff;
+}
+
+    .gridViewPaginacion a:hover {
+        display: block;
+        margin: 0;
+        padding: 5px;
+        width: 18px;
+        height: 18px;
+        border-radius: 50% 50%;
+        background: #B1C689;
+        color: #3743a1;
+        box-shadow: 0 0 .5em rgba(0, 0, 0, .8);
+    }*/
