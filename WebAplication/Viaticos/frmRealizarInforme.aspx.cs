@@ -118,38 +118,43 @@ namespace WebAplication.Viaticos
             VT_InformeActividad infact = new VT_InformeActividad();
             VT_Informe inf = new VT_Informe();
 
-            inf.Id_Solicitud = LblIdSolicitud.Text;
-            inf.Dirigido_A = LblDirigidoA.Text; 
-            inf.Fecha_Informe = DateTime.Now;
-            inf.Fecha_Aprobacion = DateTime.Now;
-            inf.Conclusion = TxtConclucion.Text;
-            inf.Observacion = ""; ;
-            inf.Estado = "ENVIADO";
-            inf.Objetivo = TxtObjetivo.Text;
-            inf.Recomendacion = TxtRecomendacion.Text;
-            InsInf.DB_Registrar_INFORME(inf);
-            LblIdInf.Text = aux.DB_MaxId("VIAT_INFORME", "Id_Informe");
-            int cont = 1;
-            foreach (DataListItem item in DataList1.Items)
+            if (TxtObjetivo.Text != "" && TxtRecomendacion.Text != "" && TxtConclucion.Text != "")
             {
-                TextBox tx = (TextBox)item.FindControl("TxtObjetivos");
-                Label lb = (Label)item.FindControl("FechaDiaLabel");
-                infact.Id_Informe = Convert.ToInt32(LblIdInf.Text);
-                infact.Fecha = Convert.ToDateTime(lb.Text);
-                infact.Cont = cont;
-                infact.Actividad = tx.Text;
-                InsInf.DB_Registrar_INFORME_ACTIVIDAD(infact);
-                cont++;
-            }
-            s.DB_Cambiar_ESTADO(LblIdSolicitud.Text, "INF-ENVIADO");
-            //s.DB_Eliminar_OBSERVACION(LblIdSolicitud.Text);
+                inf.Id_Solicitud = LblIdSolicitud.Text;
+                inf.Dirigido_A = LblDirigidoA.Text;
+                inf.Fecha_Informe = DateTime.Now;
+                inf.Fecha_Aprobacion = DateTime.Now;
+                inf.Observacion = "";
+                inf.Conclusion = TxtConclucion.Text;
+                inf.Objetivo = TxtObjetivo.Text;
+                inf.Recomendacion = TxtRecomendacion.Text;
+                inf.Estado = "ENVIADO";
+                InsInf.DB_Registrar_INFORME(inf);
+                LblIdInf.Text = aux.DB_MaxId("VIAT_INFORME", "Id_Informe");
 
-            StringBuilder sbMensaje = new StringBuilder();
-            sbMensaje.Append("<script type='text/javascript'>");
-            sbMensaje.AppendFormat("window.open('{0}','Titulo','top=0,left=0,width=1000,height=600,scrollbars=yes,resizable=no,directories=no,location=no,menubar=no,status=no,Titlebar=yes,toolbar=no');", "../Viaticos/repInforme.aspx?ci=" + LblIdSolicitud.Text);
-            sbMensaje.Append("</script>");
-            ClientScript.RegisterClientScriptBlock(this.GetType(), "Mensaje", sbMensaje.ToString());
-            Response.Redirect("frmListaInformesUs.aspx");
+                int cont = 1;
+                foreach (DataListItem item in DataList1.Items)
+                {
+                    TextBox tx = (TextBox)item.FindControl("TxtObjetivos");
+                    Label lb = (Label)item.FindControl("FechaDiaLabel");
+                    infact.Id_Informe = Convert.ToInt32(LblIdInf.Text);
+                    infact.Fecha = Convert.ToDateTime(lb.Text);
+                    infact.Cont = cont;
+                    infact.Actividad = tx.Text;
+                    InsInf.DB_Registrar_INFORME_ACTIVIDAD(infact);
+                    cont++;
+                }
+                s.DB_Cambiar_ESTADO(LblIdSolicitud.Text, "INF-ENVIADO");
+                StringBuilder sbMensaje = new StringBuilder();
+                sbMensaje.Append("<script type='text/javascript'>");
+                sbMensaje.AppendFormat("window.open('{0}','Titulo','top=0,left=0,width=1000,height=600,scrollbars=yes,resizable=no,directories=no,location=no,menubar=no,status=no,Titlebar=yes,toolbar=no');", "../Viaticos/repInforme.aspx?ci=" + LblIdSolicitud.Text);
+                sbMensaje.Append("</script>");
+                ClientScript.RegisterClientScriptBlock(this.GetType(), "Mensaje", sbMensaje.ToString());
+                Response.Redirect("frmListaInformesUs.aspx");
+            }
+            else
+                lblMensaje.Text = "Falta Completar Informe...!";
+            //s.DB_Eliminar_OBSERVACION(LblIdSolicitud.Text);           
         }
         protected DateTime fechaINF()
         {

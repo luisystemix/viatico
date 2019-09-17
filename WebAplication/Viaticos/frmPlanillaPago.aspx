@@ -26,6 +26,9 @@
         .auto-style1 {
             height: 19px;
         }
+        .auto-style2 {
+            width: 72px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -164,7 +167,7 @@
             <td>Monto</td>
             <td>Dias de Comisión:</td>
             <td>Total Viaticos</td>
-            <td>RC-IVA 13%</td>
+            <td class="auto-style2">&nbsp;</td>
             <td>Liquido Pagable</td>
             <td width="110">&nbsp;</td>
         </tr>
@@ -180,7 +183,7 @@
             <td>
                 <asp:Label ID="LblTotalMonto" runat="server"></asp:Label>
             </td>
-            <td>
+            <td class="auto-style2">
                 <asp:Label ID="LblConIVA" runat="server"></asp:Label>
             </td>
             <td>
@@ -205,7 +208,7 @@
             <td>
                 <asp:Label ID="LblTotalMonto15" runat="server"></asp:Label>
             </td>
-            <td>
+            <td class="auto-style2">
                 <asp:Label ID="LblConIVA15" runat="server"></asp:Label>
             </td>
             <td>
@@ -220,7 +223,7 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style2">&nbsp;</td>
             <td>Total a pagar:
                 <asp:Label ID="LblTotalPago" runat="server" style="font-weight: 700"></asp:Label>
             </td>

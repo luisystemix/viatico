@@ -22,6 +22,15 @@ namespace WebAplication.Viaticos {
         protected global::System.Web.UI.WebControls.Label LblFechaSalida;
         
         /// <summary>
+        /// Control lblMensaje.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensaje;
+        
+        /// <summary>
         /// Control LblIdSolicitud.
         /// </summary>
         /// <remarks>
@@ -110,15 +119,6 @@ namespace WebAplication.Viaticos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TxtRecomendacion;
-        
-        /// <summary>
-        /// Control TxtObservacion.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtObservacion;
         
         /// <summary>
         /// Control BtnRegistrar.

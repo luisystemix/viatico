@@ -3,7 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <script src="../Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>
     <script src="../AcopioSilos/jquery.cleditor.js" type="text/javascript"></script>
-    <link href="../AcopioSilos/jquery.cleditor.css" rel="stylesheet" />
+    <link href="../AcopioSilos/jquery.cleditor.css" rel="stylesheet" />    
     <script type="text/javascript">
         //$.cleditor.defaultOptions.width = '100%';
         //$.cleditor.defaultOptions.height = 100;
@@ -27,7 +27,9 @@
             });
 
         function Confirmacion() {
-            var seleccion = confirm("Está seguro de enviar la información registrada…?");
+
+            var seleccion = confirm("Está seguro de Guardar datos del Informe...?");
+
             return seleccion;
         }
     </script>
@@ -53,8 +55,9 @@
                 <asp:Label ID="LblFechaSalida" runat="server"></asp:Label>
             </td>
             <td width="80">&nbsp;</td>
-            <td>
-                &nbsp;</td>
+            <td class="resaltaValor">
+                <asp:Label ID="lblMensaje" runat="server"></asp:Label>
+            </td>
             <td width="60"><strong>Solicitud:</strong></td>
             <td width="140" style="width: 190px">
                 <asp:Label ID="LblIdSolicitud" runat="server"></asp:Label>
@@ -137,16 +140,10 @@ WHERE VIAT_PLANILLA.Id_Solicitud = @Id_Solicitud ORDER BY VIAT_PLANILLA_DIA.Fech
             </td>
         </tr>
         <tr>
-            <td class="SubTitulo2">
-                OBSERVACIÓN</td>
-        </tr>
-        <tr>
             <td>
-                <asp:TextBox ID="TxtObservacion" runat="server" TextMode="MultiLine"></asp:TextBox>
-
-            </td>
+                &nbsp;</td>
         </tr>
         </table>
-    <div style="text-align: center"><asp:Button ID="BtnRegistrar" runat="server" OnClientClick ="return Confirmacion()" OnClick="BtnRegistrar_Click" Text="Guardar  Informe" />
+    <div style="text-align: center"><asp:Button ID="BtnRegistrar" runat="server" OnClientClick="Confirmacion()" OnClick="BtnRegistrar_Click" Text="Guardar  Informe" />
     <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" /></div>
     </asp:Content>

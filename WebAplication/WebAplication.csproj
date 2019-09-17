@@ -331,6 +331,9 @@
     <Content Include="js\jquery-ui.js" />
     <Content Include="js\jquery.cleditor.js" />
     <Content Include="js\jquery.quicksearch.js" />
+    <None Include="js\jquery.validate-vsdoc.js" />
+    <Content Include="js\jquery.validate.js" />
+    <Content Include="js\jquery.validate.min.js" />
     <Content Include="js\validar.js" />
     <Content Include="js\validarcampo.js" />
     <Content Include="Juridica\frmValidarDatosOrg.aspx" />

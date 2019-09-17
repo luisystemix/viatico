@@ -216,10 +216,18 @@ namespace WebAplication.Viaticos
             //decimal TPago = Convert.ToDecimal(data.Rows[0][7]);
             //LblTotalPago.Text = string.Format("{0:N2}", (TPago * 100) / 100);
 
-            decimal iva = Math.Round(((Convert.ToDecimal(LblTotalMonto.Text) * Convert.ToDecimal(data.Rows[0][6])) / 100), 0);
+
+            //decimal iva = Math.Round(((Convert.ToDecimal(LblTotalMonto.Text) * Convert.ToDecimal(data.Rows[0][6])) / 100), 0);
+            //PARA NO DESCONTAR IVA
+            decimal iva = 0;
             LblConIVA.Text = string.Format("{0:n0}", (Math.Truncate(iva * 100) / 100));
-            decimal iva10 = Math.Round(((Convert.ToDecimal(LblTotalMonto10.Text) * Convert.ToDecimal(data.Rows[0][6])) / 100), 0);
+
+            //decimal iva10 = Math.Round(((Convert.ToDecimal(LblTotalMonto10.Text) * Convert.ToDecimal(data.Rows[0][6])) / 100), 0);
+            //PARA NO DESCONTAR IVA
+            decimal iva10 = 0;
             LblConIVA10.Text = string.Format("{0:n0}", (Math.Truncate(iva10 * 100) / 100));
+            //OCULTAR MONTOS DE DESCUENTO
+            LblConIVA.Visible = LblConIVA10.Visible = false;
 
             //LblLiquidoTotal.Text = Convert.ToString(Math.Round((Convert.ToDecimal(LblTotalMonto.Text)-Convert.ToDecimal(LblConIVA.Text)), 0));
             //LblLiquidoTotal10.Text = Convert.ToString(Math.Round(Convert.ToDecimal(LblTotalMonto10.Text)-Convert.ToDecimal(LblConIVA10.Text), 0));

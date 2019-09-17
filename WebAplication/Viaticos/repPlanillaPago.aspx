@@ -8,6 +8,12 @@
     <title></title>
        <link href="../css/EmapaStyele.css" rel="stylesheet" />
 
+    <style type="text/css">
+        .auto-style1 {
+            width: 74px;
+        }
+    </style>
+
     </head>
 <body>
     <form id="form1" runat="server">
@@ -118,7 +124,7 @@
             <td>Monto</td>
             <td>Dias de Comisión:</td>
             <td>Total Viaticos</td>
-            <td>RC-IVA 13%</td>
+            <td class="auto-style1">&nbsp;</td>
             <td>Liquido Pagable</td>
             <td>N° Cuenta o cheque</td>
             <td>Firma</td>
@@ -135,7 +141,7 @@
             <td>
                 <asp:Label ID="LblTotalMonto" runat="server">0</asp:Label>
             </td>
-            <td>
+            <td class="auto-style1">
                 <asp:Label ID="LblConIVA" runat="server"></asp:Label>
             </td>
             <td>
@@ -159,7 +165,7 @@
             <td>
                 <asp:Label ID="LblTotalMonto10" runat="server"></asp:Label>
             </td>
-            <td>
+            <td class="auto-style1">
                 <asp:Label ID="LblConIVA10" runat="server"></asp:Label>
             </td>
             <td>
@@ -171,7 +177,7 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td class="auto-style1">&nbsp;</td>
             <td>Total a pagar:
                 <asp:Label ID="LblTotalPago" runat="server" style="font-weight: 700"></asp:Label>
             </td>

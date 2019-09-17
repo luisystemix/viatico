@@ -37,7 +37,7 @@ namespace WebAplication.Viaticos
         #region OBTENER LA LISTA DE SOLICITUDES ENVIADAS
         protected void Cargar_VALORES()
         {
-            DB_VT_Solicitud memo = new DB_VT_Solicitud();
+                DB_VT_Solicitud memo = new DB_VT_Solicitud();
             DB_VT_Planilla pl = new DB_VT_Planilla();
             DataTable data = new DataTable();
             data = memo.DB_Reporte_SOLICITUD_US(LblIdSolicitud.Text, "DETALLE");
@@ -91,8 +91,13 @@ namespace WebAplication.Viaticos
             LblTotalMonto.Text = Convert.ToString(Math.Round(total,0));
             LblTotalMonto15.Text = Convert.ToString(Math.Round(total15,0));
 
+            total15=total = 0;  // QUITA EL RC IVA 13%
+
             LblConIVA.Text = Convert.ToString(Math.Round(((total * 13) / 100),0));
             LblConIVA15.Text = Convert.ToString(Math.Round(((total15 * 13) / 100),0));
+
+            LblConIVA.Visible = LblConIVA15.Visible = false;    //OCULTA LOS CONTROLES DONDE APARECE EL DESCUENTO DEL RC IVA 13%
+
             LblLiquidoTotal.Text = (Convert.ToInt32(LblTotalMonto.Text) - Convert.ToInt32(LblConIVA.Text)).ToString();
             LblLiquidoTotal15.Text = (Convert.ToInt32(LblTotalMonto15.Text) - Convert.ToInt32(LblConIVA15.Text)).ToString();
 
