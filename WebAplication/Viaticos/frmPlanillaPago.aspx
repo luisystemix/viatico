@@ -26,8 +26,12 @@
         .auto-style1 {
             height: 19px;
         }
-        .auto-style2 {
-            width: 72px;
+        .auto-style3 {
+            height: 19px;
+            width: 97px;
+        }
+        .auto-style4 {
+            width: 97px;
         }
     </style>
 </asp:Content>
@@ -134,10 +138,12 @@
             <td class="auto-style1">
                 <asp:Label ID="LblTotDias" runat="server" style="font-weight: 700"></asp:Label>
             </td>
-            <td colspan="4" class="auto-style1">Monto en
+            <td colspan="2" class="auto-style1">Monto en
                 <asp:Label ID="LblMoneda" runat="server" style="font-weight: 700"></asp:Label>
                 : <asp:Label ID="LblMemoNum" runat="server"></asp:Label>
             </td>
+            <td class="auto-style1">&nbsp;</td>
+            <td class="auto-style3">&nbsp;</td>
             <td class="auto-style1"></td>
         </tr>
         <tr>
@@ -151,9 +157,11 @@
                 &nbsp;</td>
             <td>Día Rural:<asp:Label ID="LblPgoDiaRural" runat="server" style="font-weight: 700"></asp:Label>
             </td>
-            <td width="40">
-                &nbsp;</td>
-            <td></td>
+            <td class="auto-style4">
+                Monto de Factura:</td>
+            <td class="bold">
+                <asp:TextBox ID="txtMontoFactura" runat="server" BackColor="#DFF8FF" Font-Bold="True" Width="70px" AutoPostBack="True" OnTextChanged="txtMontoFactura_TextChanged">0</asp:TextBox>
+                Bs.</td>
         </tr>
     </table>
     <table class="TableBorder">
@@ -164,11 +172,11 @@
     <table class="TableBorder">
         <tr>
             <td>&nbsp;</td>
-            <td>Monto</td>
-            <td>Dias de Comisión:</td>
-            <td>Total Viaticos</td>
-            <td class="auto-style2">&nbsp;</td>
-            <td>Liquido Pagable</td>
+            <td class="SubTitulo">Montos:</td>
+            <td class="SubTitulo">Dias de Comisión:</td>
+            <td class="SubTitulo">Total Viaticos:</td>
+            <td class="SubTitulo">&nbsp;</td>
+            <td class="SubTitulo">Liquido Pagable</td>
             <td width="110">&nbsp;</td>
         </tr>
         <tr>
@@ -183,7 +191,7 @@
             <td>
                 <asp:Label ID="LblTotalMonto" runat="server"></asp:Label>
             </td>
-            <td class="auto-style2">
+            <td>
                 <asp:Label ID="LblConIVA" runat="server"></asp:Label>
             </td>
             <td>
@@ -208,7 +216,7 @@
             <td>
                 <asp:Label ID="LblTotalMonto15" runat="server"></asp:Label>
             </td>
-            <td class="auto-style2">
+            <td>
                 <asp:Label ID="LblConIVA15" runat="server"></asp:Label>
             </td>
             <td>
@@ -223,13 +231,36 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td class="auto-style2">&nbsp;</td>
-            <td>Total a pagar:
-                <asp:Label ID="LblTotalPago" runat="server" style="font-weight: 700"></asp:Label>
+            <td class="textoDerecha">Sub Total:</td>
+            <td class="textoIzquierda">&nbsp;<asp:Label ID="LblTotalPago" runat="server" style="font-weight: 700"></asp:Label>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="textoDerecha">Retención RC-IVA: </td>
+            <td class="textoIzquierda"><strong>
+                <asp:Label ID="lblRetencion" runat="server"></asp:Label>
+                </strong>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="textoDerecha">Total a Pagar:</td>
+            <td class="textoIzquierda"><strong>
+                <asp:Label ID="lblTotalPagar" runat="server"></asp:Label>
+                </strong>
             </td>
             <td>&nbsp;</td>
         </tr>
     </table>
     <asp:Button ID="BtnAceptar" runat="server" OnClientClick ="return Confirmacion()" Text="Procesar pago" OnClick="BtnAceptar_Click" />
-    <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" />
+    <asp:Button ID="BtnCancelar" runat="server" Text="Cancelar" OnClick="BtnCancelar_Click" />
 </asp:Content>

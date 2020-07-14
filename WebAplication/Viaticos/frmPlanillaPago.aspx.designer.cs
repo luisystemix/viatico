@@ -166,6 +166,15 @@ namespace WebAplication.Viaticos {
         protected global::System.Web.UI.WebControls.Label LblPgoDiaRural;
         
         /// <summary>
+        /// Control txtMontoFactura.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtMontoFactura;
+        
+        /// <summary>
         /// Control Lbl100.
         /// </summary>
         /// <remarks>
@@ -281,6 +290,24 @@ namespace WebAplication.Viaticos {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LblTotalPago;
+        
+        /// <summary>
+        /// Control lblRetencion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblRetencion;
+        
+        /// <summary>
+        /// Control lblTotalPagar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTotalPagar;
         
         /// <summary>
         /// Control BtnAceptar.

@@ -146,7 +146,7 @@ namespace WebAplication.Viaticos
             Label1.Visible = true;//
 
             //page.Controls.Add(Image1);
-            Label1.Text = "<br/><br/><table align='center' width='800px'><tr align='center'><td><img src='http://200.105.195.55/emapaglobal/img/bannerReport.jpg'alt='EMAPA-Documento' style='float:inherit'/></td><td></td><td></td><td colspan='5'><b style='text-align: center'>EMPRESA DE APOYO A LA PRODUCCION DE ALIMENTOS<br />REPORTE DETALLE DE VIAJES REALIZADOS</b><br>Regional "+ DDLRegional.SelectedItem.Text +" del "+ TxtFechIni.Text +" al "+ TxtFechFin.Text  +"<br /></td><td></td><td></td><td></td></tr><tr align='center'><td colspan='11'><b></b> </td></tr></table>";
+            Label1.Text = "<br/><br/><table align='center' width='800px'><tr align='center'><td><img src='http://201.222.80.212/emapaglobal/img/bannerReport.jpg'alt='EMAPA-Documento' style='float:inherit'/></td><td></td><td></td><td colspan='5'><b style='text-align: center'>EMPRESA DE APOYO A LA PRODUCCION DE ALIMENTOS<br />REPORTE DETALLE DE VIAJES REALIZADOS</b><br>Regional " + DDLRegional.SelectedItem.Text +" del "+ TxtFechIni.Text +" al "+ TxtFechFin.Text  +"<br /></td><td></td><td></td><td></td></tr><tr align='center'><td colspan='11'><b></b> </td></tr></table>";
             page.Controls.Add(Label1);
             // page.Controls.Add(lblGlosa);
             page.Controls.Add(form);

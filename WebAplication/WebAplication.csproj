@@ -413,6 +413,7 @@
     <Content Include="Global.asax" />
     <Content Include="Viaticos\frmAnulaciones.aspx" />
     <Content Include="Viaticos\frmAuxiliarViaticos.aspx" />
+    <Content Include="Viaticos\frmDetallePagos.aspx" />
     <Content Include="Viaticos\frmDetalleViajesMes.aspx" />
     <Content Include="Viaticos\frmDocdeAnulados.aspx" />
     <Content Include="Viaticos\frmDocumentos.aspx" />
@@ -1474,6 +1475,13 @@
     </Compile>
     <Compile Include="Viaticos\frmAuxiliarViaticos.aspx.designer.cs">
       <DependentUpon>frmAuxiliarViaticos.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Viaticos\frmDetallePagos.aspx.cs">
+      <DependentUpon>frmDetallePagos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Viaticos\frmDetallePagos.aspx.designer.cs">
+      <DependentUpon>frmDetallePagos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Viaticos\frmDetalleViajesMes.aspx.cs">
       <DependentUpon>frmDetalleViajesMes.aspx</DependentUpon>

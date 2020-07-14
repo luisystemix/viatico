@@ -80,6 +80,11 @@ namespace WebAplication.Viaticos
                 LblGaf.Text = "SILVESTRE OSWALDO CLAVIJO PALACIOS";
                 LblCargoA.Text = "GERENTE ADMINISTRATIVO FINANCIERO";
             }
+            if (Convert.ToDateTime(fechaAprobacion).Date >= Convert.ToDateTime("25/06/2019").Date)
+            {
+                LblGaf.Text = "ALEJANDRO RAMIREZ BANZER";
+                LblCargoA.Text = "GERENTE ADMINISTRATIVO FINANCIERO";
+            }
         }
         protected void Reporte_MEMORANDUM()
         {

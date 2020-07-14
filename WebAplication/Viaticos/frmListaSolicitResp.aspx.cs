@@ -124,8 +124,7 @@ namespace WebAplication.Viaticos
         #endregion
         #region PROCESAR LA PLANILLA DE PAGO
         protected void Cargar_PLANILLA(string idUser, string idSolicitud)
-        {
-            string lugar = "";
+        {            
             DB_VT_Planilla regP = new DB_VT_Planilla();
             VT_Planilla p = new VT_Planilla();
             VT_PlanillaDia pd = new VT_PlanillaDia();
@@ -138,12 +137,15 @@ namespace WebAplication.Viaticos
             DataTable dt2 = new DataTable();
             int numero = s1.DB_Numero_Filas_SOLICITUD(idSolicitud);// se modifico query con  'cont>0'
             decimal contdias = Convert.ToDecimal("0");
+            decimal incrementoMontoUrbano = 0;
+            decimal incrementoMontoRural = 0;
+
             p.Id_Solicitud = idSolicitud;
             p.Tot_Num_Dias = 0;
             p.Tot_Num_Dias15 = 0;
             p.Pago_Total = 0;
             p.Pago_Total15 = 0;
-            p.Rc_Iva = 13; /*********************************************************** OJO AQUI HAY QUE PONER LOS PARAMETROS DE GESTION ******/
+            p.Rc_Iva = 0; /*********************************************************** OJO AQUI HAY QUE PONER LOS PARAMETROS DE GESTION ******/
             p.Liquido_Pagable = 0;
             p.Num_Cheque = "0";
             p.Tasa_Cambio = 0;
@@ -162,7 +164,32 @@ namespace WebAplication.Viaticos
             DB_VT_Categoria cat = new DB_VT_Categoria();
             string aux1 = dt1.Rows[0][11].ToString();
             string aux2 = dt.Rows[0][3].ToString();
-            dt2 = cat.DB_Seleccionar_CATEGORIA(Convert.ToInt32(dt1.Rows[0][11].ToString()), dt.Rows[0][3].ToString());
+
+            dt2 = cat.DB_Seleccionar_CATEGORIA(Convert.ToInt32(dt1.Rows[0][11].ToString()), dt.Rows[0][3].ToString());  //ID_CATEGORIA , INTERIOR  -> Sale Montos
+            //------------------------------JLAH
+            sd1 = s1.DB_Seleccionar_SOLICITUD_DESTINO(idSolicitud, 1);  //para obtener la fecha de salida.
+            DateTime fechaCambio = new DateTime(2019, 9, 11,0,0,1);
+            if (sd1.Fecha_Salida >= fechaCambio)
+            { switch (dt1.Rows[0][11].ToString())
+                {
+                    case "3": incrementoMontoUrbano = 91;
+                        incrementoMontoRural = 54;
+                        break;
+                    case "4":
+                        incrementoMontoUrbano = 40;
+                        incrementoMontoRural = 24;
+                        break;
+                    case "5":
+                        incrementoMontoUrbano = 30;
+                        incrementoMontoRural = 18;
+                        break;
+                    case "6":
+                        incrementoMontoUrbano = 91;
+                        incrementoMontoRural = 29;
+                        break;
+                }
+            }
+
             /***************************************************************/
             //DB_VT_Solicitud sol = new DB_VT_Solicitud();
             int contador = 1;
@@ -183,13 +210,13 @@ namespace WebAplication.Viaticos
                         if (sd1.Zona == "Interdepartamental")
                         {
                             pd.Area = "Interdepartamental";
-                            pd.Monto = contdias * Convert.ToDecimal(dt2.Rows[0][3].ToString());
+                            pd.Monto = contdias * (Convert.ToDecimal(dt2.Rows[0][3].ToString()) + incrementoMontoUrbano);
                         }
                         else
                         {
                             //pd.Area = "Departamental";//Al interior del Departamento
                             pd.Area = "Al interior del Departamento";
-                            pd.Monto = contdias * Convert.ToDecimal(dt2.Rows[0][4].ToString());
+                            pd.Monto = contdias * (Convert.ToDecimal(dt2.Rows[0][4].ToString()) + incrementoMontoRural);
                         }
                         pd.Destino = sd1.Destino + " " + sd1.Lugar;
                         pd.Observacion = "SIN PERNOCTE";
@@ -216,12 +243,12 @@ namespace WebAplication.Viaticos
                             if (sd1.Zona == "Interdepartamental")
                             {
                                 pd.Area = "Interdepartamental";
-                                pd.Monto = 1 * Convert.ToDecimal(dt2.Rows[0][3].ToString());
+                                pd.Monto = 1 * (Convert.ToDecimal(dt2.Rows[0][3].ToString()) + incrementoMontoUrbano);
                             }
                             else
                             {
                                 pd.Area = "Al interior del Departamento";
-                                pd.Monto = 1 * Convert.ToDecimal(dt2.Rows[0][4].ToString());
+                                pd.Monto = 1 * (Convert.ToDecimal(dt2.Rows[0][4].ToString()) + incrementoMontoRural);
                             }
                             pd.Destino = sd1.Destino + " " + sd1.Lugar;
                             pd.Observacion = "CON PERNOCTE";
@@ -243,12 +270,12 @@ namespace WebAplication.Viaticos
                             if (sd1.Zona == "Interdepartamental")
                             {
                                 pd.Area = "Interdepartamental";
-                                pd.Monto = contdias * Convert.ToDecimal(dt2.Rows[0][3].ToString());
+                                pd.Monto = contdias * (Convert.ToDecimal(dt2.Rows[0][3].ToString()) + incrementoMontoUrbano);
                             }
                             else
                             {
                                 pd.Area = "Al interior del Departamento";
-                                pd.Monto = contdias * Convert.ToDecimal(dt2.Rows[0][4].ToString());
+                                pd.Monto = contdias * (Convert.ToDecimal(dt2.Rows[0][4].ToString()) + incrementoMontoRural);
                             }
                             pd.Destino = sd1.Destino + " " + sd1.Lugar;
                             pd.Observacion = "SIN PERNOCTE";
@@ -265,12 +292,12 @@ namespace WebAplication.Viaticos
                             if (sd1.Zona == "Interdepartamental")
                             {
                                 pd.Area = "Interdepartamental";
-                                pd.Monto = contdias * Convert.ToDecimal(dt2.Rows[0][3].ToString());
+                                pd.Monto = contdias * (Convert.ToDecimal(dt2.Rows[0][3].ToString()) + incrementoMontoUrbano);
                             }
                             else
                             {
                                 pd.Area = "Al interior del Departamento";
-                                pd.Monto = contdias * Convert.ToDecimal(dt2.Rows[0][4].ToString());
+                                pd.Monto = contdias * (Convert.ToDecimal(dt2.Rows[0][4].ToString()) + incrementoMontoRural);
                             }
                             pd.Destino = sd1.Destino + " " + sd1.Lugar;
                             pd.Observacion = "No se cumplió el periodo de 4 horas que se considera como  medio día de viatico";

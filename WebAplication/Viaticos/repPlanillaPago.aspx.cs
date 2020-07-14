@@ -237,6 +237,9 @@ namespace WebAplication.Viaticos
             decimal Ltotal10 = Math.Round(Convert.ToDecimal(LblTotalMonto10.Text) - Convert.ToDecimal(LblConIVA10.Text), 0);
             LblLiquidoTotal10.Text = string.Format("{0:n0}", (Math.Truncate(Ltotal10 * 100) / 100));
 
+            lblTotal.Text = (Ltotal + Ltotal10).ToString();
+            lblRetencion.Text = string.Format("{0:n0}",data.Rows[0][6].ToString());
+
             //LblTotalPago.Text = Convert.ToString(Math.Round(Convert.ToDecimal(data.Rows[0][7]),0));
             decimal TPago = Math.Round(Convert.ToDecimal(data.Rows[0][7]), 0);
             LblTotalPago.Text = string.Format("{0:n0}", (Math.Truncate(TPago * 100) / 100));

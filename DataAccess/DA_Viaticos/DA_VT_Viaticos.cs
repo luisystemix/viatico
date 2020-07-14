@@ -250,6 +250,7 @@ namespace DataAccess.DA_Viaticos
                     cmd.Parameters.AddWithValue("@fechafin", fechafin);
                     cmd.Parameters.AddWithValue("@idReg", idreg);
                     cmd.Parameters.AddWithValue("@Parametro", parametro);
+                    cmd.CommandTimeout = 1700;
                     SqlDataAdapter da = new SqlDataAdapter(cmd);
                     //cmd.ExecuteNonQuery();
                     da.Fill(dt);

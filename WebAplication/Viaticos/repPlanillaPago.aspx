@@ -10,7 +10,7 @@
 
     <style type="text/css">
         .auto-style1 {
-            width: 74px;
+            width: 108px;
         }
     </style>
 
@@ -65,11 +65,15 @@
             <td></td>
             <td>Fecha Salida:</td>
             <td>
+                <strong>
                 <asp:Label ID="LblFechaSalida" runat="server"></asp:Label>
+                </strong>
             </td>
             <td>Fecha Retorno:</td>
             <td>
+                <strong>
                 <asp:Label ID="LblFechaRetorno" runat="server"></asp:Label>
+                </strong>
             </td>
         </tr>
         <tr>
@@ -120,14 +124,14 @@
         </table>
     <table class="TableBorder">
         <tr>
-            <td width="35">&nbsp;</td>
-            <td>Monto</td>
-            <td>Dias de Comisión:</td>
-            <td>Total Viaticos</td>
-            <td class="auto-style1">&nbsp;</td>
-            <td>Liquido Pagable</td>
-            <td>N° Cuenta o cheque</td>
-            <td>Firma</td>
+            <td width="35"><strong></strong></td>
+            <td><strong>Monto</strong></td>
+            <td><strong>Dias de Comisión:</strong></td>
+            <td><strong>Total Viaticos</strong></td>
+            <td class="auto-style1"><strong></strong></td>
+            <td><strong>Liquido Pagable</strong></td>
+            <td><strong>N° Cuenta o cheque</strong></td>
+            <td><strong>Firma</strong></td>
         </tr>
         <tr>
             <td>
@@ -177,9 +181,34 @@
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
-            <td class="auto-style1">&nbsp;</td>
-            <td>Total a pagar:
-                <asp:Label ID="LblTotalPago" runat="server" style="font-weight: 700"></asp:Label>
+            <td class="auto-style1">Sub Total: <strong>&nbsp;&nbsp;&nbsp;</strong></td>
+            <td><strong>
+                <asp:Label ID="lblTotal" runat="server"></asp:Label>
+                </strong>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="auto-style1">Retención RC-IVA:<strong>&nbsp;&nbsp;&nbsp;</strong></td>
+            <td><strong>
+                <asp:Label ID="lblRetencion" runat="server"></asp:Label>
+                </strong>
+            </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td class="auto-style1">Total a pagar:</td>
+            <td>&nbsp;<asp:Label ID="LblTotalPago" runat="server" style="font-weight: 700"></asp:Label>
             </td>
             <td>&nbsp;</td>
             <td>Beneficiario</td>

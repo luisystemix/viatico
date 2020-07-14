@@ -114,6 +114,7 @@ namespace DataAccess.DA_Viaticos
                     cmd.Parameters.AddWithValue("@Tot_Num_Dias15", p.Tot_Num_Dias15);
                     cmd.Parameters.AddWithValue("@Pago_Total", p.Pago_Total);
                     cmd.Parameters.AddWithValue("@Pago_Total15", p.Pago_Total15);
+                    cmd.Parameters.AddWithValue("@Rc_iva", p.Rc_Iva);
                     cmd.Parameters.AddWithValue("@Liquido_Pagable", p.Liquido_Pagable);
                     cmd.Parameters.AddWithValue("@Num_Cheque", p.Num_Cheque);
                     cmd.Parameters.AddWithValue("@Fecha_Atendido", p.Fecha_Atendido);

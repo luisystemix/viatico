@@ -37,7 +37,7 @@ namespace WebAplication.Viaticos
         #region OBTENER LA LISTA DE SOLICITUDES ENVIADAS
         protected void Cargar_VALORES()
         {
-                DB_VT_Solicitud memo = new DB_VT_Solicitud();
+            DB_VT_Solicitud memo = new DB_VT_Solicitud();
             DB_VT_Planilla pl = new DB_VT_Planilla();
             DataTable data = new DataTable();
             data = memo.DB_Reporte_SOLICITUD_US(LblIdSolicitud.Text, "DETALLE");
@@ -91,7 +91,9 @@ namespace WebAplication.Viaticos
             LblTotalMonto.Text = Convert.ToString(Math.Round(total,0));
             LblTotalMonto15.Text = Convert.ToString(Math.Round(total15,0));
 
-            total15=total = 0;  // QUITA EL RC IVA 13%
+
+            total15=total = 0; 
+            // QUITA EL RC IVA 13%
 
             LblConIVA.Text = Convert.ToString(Math.Round(((total * 13) / 100),0));
             LblConIVA15.Text = Convert.ToString(Math.Round(((total15 * 13) / 100),0));
@@ -102,6 +104,16 @@ namespace WebAplication.Viaticos
             LblLiquidoTotal15.Text = (Convert.ToInt32(LblTotalMonto15.Text) - Convert.ToInt32(LblConIVA15.Text)).ToString();
 
             LblTotalPago.Text = (Convert.ToInt32(LblLiquidoTotal.Text) + Convert.ToInt32(LblLiquidoTotal15.Text)).ToString();
+
+            decimal retencion = Convert.ToInt32(LblTotalPago.Text) - Convert.ToInt32(txtMontoFactura.Text);
+           
+            retencion=retencion < 0 ? 0:retencion;
+
+            lblRetencion.Text = Math.Round((retencion * 13) / 100, 0).ToString();
+
+            lblTotalPagar.Text = (Convert.ToInt32(LblTotalPago.Text) - Convert.ToInt32(lblRetencion.Text)).ToString();
+                                 
+
             VT_Planilla plani = new VT_Planilla();
             if (LblEstado.Text == "INF-APROBADO")
             {
@@ -128,8 +140,42 @@ namespace WebAplication.Viaticos
             DataTable dataCategoria = new DataTable();
             dataCategoria = categoria.DB_Seleccionar_CATEGORIA(Convert.ToInt32(LblCategoria.Text), valorTipo);
             LblMoneda.Text = dataCategoria.Rows[0][5].ToString();
-            LblPgoDiaUrbano.Text = dataCategoria.Rows[0][3].ToString();
-            LblPgoDiaRural.Text = dataCategoria.Rows[0][4].ToString();
+
+            //jlah
+            //------------------------------JLAH
+            DB_VT_Solicitud s1 = new DB_VT_Solicitud();
+            VT_SolicitudDestino sd1 = new VT_SolicitudDestino();
+            decimal incrementoMontoUrbano= 0;
+            decimal incrementoMontoRural = 0;
+
+            sd1 = s1.DB_Seleccionar_SOLICITUD_DESTINO(LblIdSolicitud.Text, 1);  //para obtener la fecha de salida.
+            DateTime fechaCambio = new DateTime(2019, 9, 11, 0, 0, 1);
+            if (sd1.Fecha_Salida >= fechaCambio)
+            {
+                switch (LblCategoria.Text)
+                {
+                    case "3":
+                        incrementoMontoUrbano = 91;
+                        incrementoMontoRural = 54;
+                        break;
+                    case "4":
+                        incrementoMontoUrbano = 40;
+                        incrementoMontoRural = 24;
+                        break;
+                    case "5":
+                        incrementoMontoUrbano = 30;
+                        incrementoMontoRural = 18;
+                        break;
+                    case "6":
+                        incrementoMontoUrbano = 91;
+                        incrementoMontoRural = 29;
+                        break;
+                }
+            }
+            //---------------------------------------
+
+            LblPgoDiaUrbano.Text = (Convert.ToDecimal(dataCategoria.Rows[0][3].ToString())+ incrementoMontoUrbano).ToString();
+            LblPgoDiaRural.Text = (Convert.ToDecimal(dataCategoria.Rows[0][4].ToString())+ incrementoMontoRural).ToString();
 
             //REGISTRO DE REPORTE SOLICITUD - SP:DB_Reporte_SOLICITUD_US -PARAMETER:FECHAMAXMIN
             DataTable dataSolFechaMaxMin = new DataTable();
@@ -187,7 +233,8 @@ namespace WebAplication.Viaticos
             regPlanilla.Tot_Num_Dias15 = Convert.ToDecimal(LblDiasCom15.Text);
             regPlanilla.Pago_Total = Convert.ToDecimal(LblTotalMonto.Text);
             regPlanilla.Pago_Total15 = Convert.ToDecimal(LblTotalMonto15.Text);
-            regPlanilla.Liquido_Pagable = Convert.ToDecimal(LblTotalPago.Text);
+            regPlanilla.Rc_Iva= Convert.ToDecimal(lblRetencion.Text);  //SE GUARDA EL CALCULO DE RETENCION
+            regPlanilla.Liquido_Pagable = Convert.ToDecimal(lblTotalPagar.Text);
             regPlanilla.Num_Cheque = TxtNumCheque.Text;
             regPlanilla.Fecha_Atendido = DateTime.Now;
             regPlanilla.MontoPorDia = Convert.ToDecimal(Lbl100.Text);
@@ -288,6 +335,16 @@ namespace WebAplication.Viaticos
             {
                 TxtNumCheque.Text = string.Empty;
             }
+        }
+
+        protected void txtMontoFactura_TextChanged(object sender, EventArgs e)
+        {
+            Cargar_VALORES();
+        }
+
+        protected void BtnCancelar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
